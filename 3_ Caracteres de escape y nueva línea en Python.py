@@ -1,3 +1,4 @@
+# 2.1.7 Instrucciones
 # Imprime el texto "La Witsi Witsi Araña"
 # \n significa salto de línea (nueva línea)
 print("La Witsi Witsi Araña\nsubió a su telaraña.")
