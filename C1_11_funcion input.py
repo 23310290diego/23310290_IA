@@ -27,4 +27,26 @@ anything = float(input("Ingresa un número: "))
 something = anything ** 2
 
 # print() muestra el resultado en pantalla combinando texto y variables.
-print(anything, "al cuadrado es", something)
+print(anything, "al cuadrado es", something,"\n")
+
+
+
+#2.6.6
+print("problema 2.6.6:")
+# Este programa calcula la longitud de la hipotenusa de un triángulo rectángulo
+# utilizando el Teorema de Pitágoras.
+
+# input() pide al usuario la longitud del primer cateto.
+# float() convierte el valor ingresado (texto) a número decimal.
+leg_a = float(input("Ingresa la longitud del primer cateto: "))
+
+# Se repite el proceso para el segundo cateto.
+leg_b = float(input("Ingresa la longitud del segundo cateto: "))
+
+# Aplicamos el Teorema de Pitágoras:
+# hipotenusa² = cateto1² + cateto2²
+# Para obtener la hipotenusa se calcula la raíz cuadrada (**0.5).
+hypo = (leg_a**2 + leg_b**2) ** .5
+
+# print() muestra el resultado final en pantalla
+print("La longitud de la hipotenusa es:", hypo)
