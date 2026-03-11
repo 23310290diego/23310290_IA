@@ -105,3 +105,130 @@ for i in range(1, 6):
 
 # Después de terminar el conteo, se muestra el mensaje final
 print("¡Listos o no, ahí voy!")
+print("\n")
+
+
+
+print("Bucle while y else")
+# Ejemplo donde el bucle while SÍ se ejecuta
+# En este caso la condición es verdadera al inicio,
+# por lo que el bucle se ejecutará varias veces.
+
+i = 1  # Inicializamos la variable
+
+# El bucle se ejecuta mientras i sea menor que 5
+while i < 5:
+    
+    # Se imprime el valor actual de i
+    print(i)
+    
+    # Se incrementa i en 1 para evitar un bucle infinito
+    i += 1
+
+# Cuando la condición del while deja de cumplirse,
+# se ejecuta el bloque else
+else:
+    print("else:", i)
+
+
+# Ejemplo donde el bucle while NO se ejecuta
+# En este caso la condición es falsa desde el inicio,
+# por lo que el cuerpo del bucle no se ejecutará.
+
+i = 5  # Inicializamos la variable con 5
+
+# La condición ya es falsa desde el principio
+while i < 5:
+    
+    # Este bloque nunca se ejecutará
+    print(i)
+    
+    i += 1
+
+# El bloque else se ejecuta igualmente
+else:
+    print("else:", i)
+
+print("\n")
+
+
+print("uso del bucle for con bloque else")
+# Este programa muestra cómo funciona el bloque else
+# cuando se utiliza con un bucle for.
+
+# El bucle recorrerá una secuencia de números generada
+# por la función range(5), que produce los valores 0,1,2,3,4
+for i in range(5):
+
+    # En cada iteración se imprime el valor actual de i
+    print(i)
+
+# Cuando el bucle termina normalmente (sin break),
+# se ejecuta el bloque else
+else:
+    print("else:", i)
+
+    print("\n")
+
+print("Altura de una pirámide de bloques")
+# Este programa calcula cuántas capas completas de una pirámide se pueden construir con una cantidad dada de bloques.
+
+# Se pide al usuario que ingrese el número de bloques disponibles
+bloques = int(input("Introduce la cantidad de bloques: "))
+
+# Variable que representará la altura de la pirámide
+altura = 0
+
+# Variable que representa la cantidad de bloques
+# necesarios para construir la siguiente capa
+bloques_necesarios = 1
+
+# Mientras haya suficientes bloques para construir otra capa
+while bloques >= bloques_necesarios:
+    
+    # Se resta del total la cantidad usada en la capa actual
+    bloques -= bloques_necesarios
+    
+    # Se incrementa la altura de la pirámide
+    altura += 1
+    
+    # La siguiente capa necesitará un bloque más
+    bloques_necesarios += 1
+
+# Cuando ya no se puedan construir más capas completas
+# se imprime la altura final de la pirámide
+print("La altura de la pirámide es:", altura)
+
+
+print("\n")
+print("Conjetura de Collatz")
+# Este programa toma un número natural diferente de 0
+# y aplica las reglas de la hipótesis de Collatz hasta
+# que el valor llegue a 1. También cuenta los pasos
+# necesarios y muestra los valores intermedios.
+
+# Se solicita al usuario que ingrese un número natural
+c0 = int(input("Introduce un número natural: "))
+
+# Variable para contar la cantidad de pasos realizados
+pasos = 0
+
+# El bucle se ejecutará mientras c0 sea diferente de 1
+while c0 != 1:
+
+    # Si el número es par
+    if c0 % 2 == 0:
+        c0 = c0 // 2  # Se divide entre 2
+
+    # Si el número es impar
+    else:
+        c0 = 3 * c0 + 1  # Se aplica la fórmula 3n + 1
+
+    # Se imprime el valor actual de c0
+    print(c0)
+
+    # Se incrementa el contador de pasos
+    pasos += 1
+
+# Cuando el valor llega a 1 se muestra el número total de pasos
+print("Número total de pasos:", pasos)
