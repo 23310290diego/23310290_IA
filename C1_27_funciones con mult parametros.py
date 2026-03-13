@@ -101,5 +101,35 @@ print(is_a_triangle(1, 1, 1))
 
 # Llamada a la función con lados 1, 1 y 3
 # 1 + 1 no es mayor que 3, por lo tanto imprime False
-print(is_a_triangle(1, 1, 3))
+print(is_a_triangle(1, 1, 3),"\n")
 
+print("serie fibonacci")
+# Función que calcula el número n de la serie de Fibonacci
+def fib(n):
+
+    # Si n es menor que 1, no es válido
+    if n < 1:
+        return None
+
+    # Los dos primeros números de Fibonacci son 1
+    if n < 3:
+        return 1
+
+    # Valores iniciales de la serie
+    elem_1 = elem_2 = 1
+    the_sum = 0
+
+    # Calcula los siguientes números de la serie
+    for i in range(3, n + 1):
+        the_sum = elem_1 + elem_2   # suma de los dos anteriores
+        elem_1, elem_2 = elem_2, the_sum  # actualiza los valores
+
+    # Devuelve el resultado
+    return the_sum
+
+
+# Imprime Fibonacci del 1 al 9
+for n in range(1, 10):
+    print(n, "->", fib(n))
+
+    
