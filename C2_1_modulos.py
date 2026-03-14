@@ -61,3 +61,12 @@ from math import sin, pi
 # Se ejecuta la función de la biblioteca estándar.
 # El acceso a la función local se ha perdido permanentemente en este punto.
 print(sin(pi / 2)) 
+print("\n")
+print("aliasing o renombrado")
+#módulo math ahora se identifica como m.
+# Esto se hace para acortar el nombre original y evitar conflictos de nombres.
+import math as m
+
+# Para usar las entidades (sin y pi), ahora es obligatorio anteponer el alias 'm'.
+# Esto demuestra que el espacio de nombres original ('math') ha sido renombrado.
+print(m.sin(m.pi/2))
