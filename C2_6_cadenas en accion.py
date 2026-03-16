@@ -71,3 +71,24 @@ if entrada.isdigit():
     mostrar_leds(entrada)
 else:
     print("Error: Por favor ingresa solo números.")
+    print("\n")
+
+
+
+
+
+    print("LAB Palindromos")
+
+text = input("Ingresa un texto: ")
+
+# 1. Eliminamos los espacios para que frases como "anita lava la tina" funcionen
+text = text.replace(' ', '')
+
+# 2. Verificación de palíndromo
+# - len(text) > 0: Asegura que no sea una cadena vacía
+# - text.upper(): Ignora la diferencia entre mayúsculas y minúsculas
+# - text[::-1]: Invierte la cadena completamente
+if len(text) > 0 and text.upper() == text[::-1].upper():
+    print("Es un palíndromo")
+else:
+    print("No es un palíndromo")
