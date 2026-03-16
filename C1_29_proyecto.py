@@ -157,4 +157,4 @@ while True:
     if victory_for(board, "X"):
         display_board(board)
         print("La máquina ganó")
-        break
+        
