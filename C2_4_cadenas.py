@@ -111,3 +111,33 @@ print("F" not in alphabet)      # True (porque la 'F' mayúscula NO está)
 print("1" not in alphabet)      # True (porque el '1' NO está)
 print("ghi" not in alphabet)    # False (porque 'ghi' SÍ está)
 print("Xyz" not in alphabet)    # True (porque 'Xyz' con mayúscula NO está)
+
+print("\n")
+print("Funciones min, max e index")
+# min(): Busca el carácter con el valor más bajo (según ASCII/Unicode)
+# Las mayúsculas tienen valores menores que las minúsculas.
+print(min("aAbByYzZ"))   
+
+# Ejemplo 2 y 3 con min()
+t = 'Los Caballeros Que Dicen "Ni!"'
+print('[' + min(t) + ']') 
+
+t = [0, 1, 2]
+print(min(t))            
+
+
+# max(): Busca el carácter con el valor más alto
+print(max("aAbByYzZ"))    #
+
+# Ejemplo 2 y 3 con max()
+t = 'Los Caballeros Que Dicen "Ni!"'
+print('[' + max(max(t)) + ']')
+
+t = [0, 1, 2]
+print(max(t))             
+
+
+# método index(): Busca la posición de la PRIMERA coincidencia
+print("aAbByYzZaA".index("b")) 
+print("aAbByYzZaA".index("Z"))
+print("aAbByYzZaA".index("A")) 
