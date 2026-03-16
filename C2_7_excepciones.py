@@ -145,3 +145,39 @@ try:
         print(ch)
 except KeyError:
     print('No existe tal clave:', ch)
+
+    print("\n")
+
+
+
+
+
+
+
+
+    print("LAB Leyendo enteros de manera segura ")
+
+def read_int(prompt, min, max):
+    ok = False
+    while not ok:
+        try:
+            # Intenta convertir la entrada a entero; lanza ValueError si falla
+            value = int(input(prompt))
+            ok = True
+        except ValueError:
+            # Se ejecuta si el usuario ingresa letras o símbolos
+            print("Error: entrada incorrecta")
+        
+        # Si es un entero, verifica que esté dentro de los límites
+        if ok:
+            ok = value >= min and value <= max
+            
+        # Si falló la validación del rango, muestra el mensaje y repite el ciclo
+        if not ok:
+            print("Error: el valor no está dentro del rango permitido (" + str(min) + ".." + str(max) + ")")
+            
+    return value
+
+v = read_int("Ingresa un número entre -10 y 10: ", -10, 10)
+
+print("El número es:", v)
