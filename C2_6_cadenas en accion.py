@@ -77,8 +77,10 @@ else:
 
 
 
-    print("LAB Palindromos")
 
+
+
+print("LAB Palindromos")
 text = input("Ingresa un texto: ")
 
 # 1. Eliminamos los espacios para que frases como "anita lava la tina" funcionen
@@ -92,3 +94,97 @@ if len(text) > 0 and text.upper() == text[::-1].upper():
     print("Es un palíndromo")
 else:
     print("No es un palíndromo")
+
+print("\n")
+
+
+
+
+
+
+
+
+print("LAB Anagramas")
+
+str_1 = input("Ingresa la primera cadena: ")
+str_2 = input("Ingresa la segunda cadena: ")
+
+# Proceso de normalización y ordenamiento:
+# 1. replace(' ',''): Elimina espacios.
+# 2. upper(): Convierte a mayúsculas para ignorar diferencias.
+# 3. list(): Convierte la cadena en una lista de letras.
+# 4. sorted(): Ordena las letras alfabéticamente (ej: 'roma' -> ['a', 'm', 'o', 'r']).
+# 5. ''.join(): Vuelve a pegar las letras en una sola cadena.
+strx_1 = ''.join(sorted(list(str_1.upper().replace(' ',''))))
+strx_2 = ''.join(sorted(list(str_2.upper().replace(' ',''))))
+
+# Verificación
+if len(strx_1) > 0 and strx_1 == strx_2:
+    print("Anagramas")
+else:
+    print("No son anagramas")
+print("\n")
+
+
+
+
+
+
+print("LAB El Digito de la Vida")
+
+date = input("Ingresa tu fecha de cumpleaños (8 dígitos): ")
+
+# 1. Validación inicial
+if len(date) < 8 or not date.isdigit():
+    print("Formato de fecha inválida.")
+else:
+    # 2. Ciclo de reducción
+    # Mientras la cadena tenga más de un carácter, seguimos sumando
+    while len(date) > 1:
+        the_sum = 0
+        for dig in date:
+            the_sum += int(dig)
+        
+        # Convertimos la suma de vuelta a cadena para volver a evaluarla
+        date = str(the_sum)
+    
+    print("Tu Dígito de la Vida es: " + date)
+print("\n")
+
+
+
+
+
+
+
+
+
+print("LAB Encuentra la palabra")
+
+# 1. Lectura y normalización (todo a mayúsculas para ignorar diferencias)
+word = input("Ingresa la palabra que deseas encontrar: ").upper()
+strn = input("Ingresa la cadena en donde deseas buscar: ").upper()
+
+found = True
+start = 0
+
+# 2. Búsqueda secuencial
+for ch in word:
+    # Buscamos el carácter 'ch' empezando desde la posición 'start'
+    pos = strn.find(ch, start) 
+    
+    # Si .find() devuelve -1, significa que la letra no existe 
+    # en lo que queda de la cadena
+    if pos < 0:
+        found = False
+        break
+    
+    # Si la encuentra, actualizamos 'start' para que la próxima búsqueda 
+    # comience justo después de la letra actual
+    start = pos + 1
+
+# 3. Resultado final
+if found:
+    print("Si")
+else:
+    print("No")
